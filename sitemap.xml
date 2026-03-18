@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://8171-bisp.portal-pk.workers.dev/</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://8171-bisp.portal-pk.workers.dev/#bisp-check</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://8171-bisp.portal-pk.workers.dev/#ramadan-package</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://8171-bisp.portal-pk.workers.dev/#education-schemes</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://8171-bisp.portal-pk.workers.dev/#health-card</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://8171-bisp.portal-pk.workers.dev/#upcoming-schemes</loc>
+    <lastmod>2026-03-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
+
