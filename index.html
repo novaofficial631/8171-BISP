@@ -274,4 +274,759 @@ footer{background:var(--g);color:rgba(255,255,255,.72);padding:34px 16px 18px;ma
     <s>بیوہ سہارا کارڈ پنجاب</s>
     <s>آسان کاروبار کارڈ 3 لاکھ قرضہ</s>
     <s>پرواز کارڈ مفت ہوائی سفر</s>
-    <s>ڈائیلیسس کا
+    <s>ڈائیلیسس کارڈ مفت علاج</s>
+    <s>احساس راشن پروگرام 9999</s>
+    <s>کسان کارڈ 10,000 سبسڈی</s>
+    <s>NRSP قرضہ 5 لاکھ تک</s>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hi">
+    <div class="logo" onclick="go('home')">
+      <div class="lic">🇵🇰</div>
+      <div class="lt"><h1>Sarkari Scheme Portal</h1><small>Pakistan Government Schemes</small></div>
+    </div>
+    <nav id="dn">
+      <a href="#" onclick="go('home')" data-p="home">Home</a>
+      <a href="#" onclick="go('schemes')" data-p="schemes">All Schemes</a>
+      <a href="#" onclick="go('upcoming')" data-p="upcoming">Upcoming</a>
+      <a href="#" onclick="go('about')" data-p="about">About</a>
+      <a href="#" onclick="go('privacy')" data-p="privacy">Privacy</a>
+      <a href="#" onclick="go('contact')" data-p="contact">Contact</a>
+    </nav>
+    <button class="ham" onclick="od()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="drw" id="drw" onclick="cd(event)">
+  <div class="di">
+    <button class="dc" onclick="cd()">Close ✕</button><br/>
+    <a onclick="go('home');cd()">🏠 Home</a>
+    <a onclick="go('schemes');cd()">📋 All Schemes</a>
+    <a onclick="go('upcoming');cd()">🔜 Upcoming</a>
+    <a onclick="go('about');cd()">ℹ️ About</a>
+    <a onclick="go('privacy');cd()">🔒 Privacy Policy</a>
+    <a onclick="go('contact');cd()">📞 Contact</a>
+  </div>
+</div>
+
+<!-- STATUS -->
+<div class="status-bar">
+  <div class="sb-in"><div class="sb-dot"></div><span id="sbTxt">اسکیمیں لوڈ ہو رہی ہیں...</span></div>
+</div>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hi2">
+      <h2>Pakistan's Biggest<br><span>Sarkari Scheme Portal</span></h2>
+      <p class="hs">BISP، احساس، رمضان پیکج، عید پیکج اور تمام سرکاری اسکیموں کی مکمل اور درست معلومات</p>
+      <div class="hero-chips">
+        <span class="hc" onclick="go('detail','eid')">🌙 عید پیکج</span>
+        <span class="hc" onclick="go('detail','ramzan')">☪️ رمضان پیکج</span>
+        <span class="hc" onclick="go('detail','bisp')">💚 BISP 8171</span>
+        <span class="hc" onclick="go('detail','solar')">☀️ سولر پینل</span>
+        <span class="hc" onclick="go('detail','sahara')">🤲 سہارا کارڈ</span>
+        <span class="hc" onclick="go('detail','labour')">👷 لیبر پروگرام</span>
+        <span class="hc" onclick="go('detail','sehat')">🏥 صحت کارڈ</span>
+        <span class="hc" onclick="go('upcoming')">🔜 Upcoming</span>
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="sec-h"><h2>📋 Active Schemes 2026</h2><p>ہر اسکیم پر Check، Apply یا Details بٹن دبائیں</p></div>
+    <div class="grid" id="hg"></div>
+    <div style="margin-top:32px">
+      <div class="sec-h"><h2>🔜 Upcoming Schemes</h2><p>جلد آنے والی اسکیمیں — ابھی سے تیاری کریں</p></div>
+      <div id="upHome"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ALL SCHEMES -->
+<div id="page-schemes" class="page">
+  <div class="wrap">
+    <div class="sec-h"><h2>📋 All Active Government Schemes 2026</h2><p>تمام فعال سرکاری اسکیمیں</p></div>
+    <div class="grid" id="ag"></div>
+  </div>
+</div>
+
+<!-- UPCOMING -->
+<div id="page-upcoming" class="page">
+  <div class="wrap">
+    <div class="sec-h"><h2>🔜 Upcoming Government Schemes</h2><p>جلد آنے والی اسکیمیں — ابھی سے تیاری کریں</p></div>
+    <div id="upFull"></div>
+    <div class="box" style="margin-top:18px;text-align:center;padding:20px">
+      <p style="font-size:.81rem;color:var(--gray500);font-family:'Noto Nastaliq Urdu',serif;direction:rtl;line-height:2.2">⚠️ یہ اسکیمیں ابھی شروع نہیں ہوئیں۔ سرکاری اعلان ہونے پر Active Schemes میں منتقل ہو جائیں گی۔</p>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL -->
+<div id="page-detail" class="page">
+  <div class="wrap" id="dw"></div>
+</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="page">
+  <div class="sp">
+    <h1>ہمارے بارے میں</h1><div class="ul"></div>
+    <p>Pakistan Sarkari Scheme Portal ایک غیر سرکاری معلوماتی ویب سائٹ ہے۔ مقصد پاکستان کے مستحق شہریوں کو سرکاری فلاحی اسکیموں کی درست معلومات فراہم کرنا ہے۔</p>
+    <h2>اہم نوٹ</h2>
+    <p>رجسٹریشن کے لیے ہمیشہ <strong>bisp.gov.pk</strong> یا <strong>8171</strong> استعمال کریں۔ ہم کوئی سرکاری ادارہ نہیں ہیں۔</p>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div id="page-privacy" class="page">
+  <div class="sp">
+    <h1>Privacy Policy</h1><div class="ul"></div>
+    <p style="font-size:.72rem;color:var(--gray500)">Last updated: March 2026</p>
+    <h2>Information We Collect</h2>
+    <p>یہ ویب سائٹ کوئی ذاتی معلومات جمع نہیں کرتی۔ کوئی فارم یا لاگ ان نہیں ہے۔</p>
+    <h2>Cookies & Advertising</h2>
+    <p>Google AdSense کوکیز استعمال کر سکتا ہے۔ آپ browser settings میں کوکیز بند کر سکتے ہیں۔</p>
+    <h2>Third Party Links</h2>
+    <p>ہم صرف سرکاری ویب سائٹوں کے لنکس دیتے ہیں جیسے bisp.gov.pk وغیرہ۔</p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="sp">
+    <h1>رابطہ کریں</h1><div class="ul"></div>
+    <div class="cg">
+      <div class="citm"><div class="ic">📱</div><h4>BISP Helpline</h4><p>0800-26477 (Free)</p></div>
+      <div class="citm"><div class="ic">💬</div><h4>SMS Check</h4><p>8171</p></div>
+      <div class="citm"><div class="ic">🌐</div><h4>Official Site</h4><p>bisp.gov.pk</p></div>
+      <div class="citm"><div class="ic">🏢</div><h4>BISP Office</h4><p>ہر ضلع میں</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="fg">
+      <div class="fc"><h4>Sarkari Scheme Portal</h4><p>پاکستان کے مستحق شہریوں کے لیے سرکاری اسکیموں کی مکمل معلومات</p></div>
+      <div class="fc"><h4>Active Schemes</h4>
+        <a onclick="go('detail','eid')">عید پیکج 2026</a>
+        <a onclick="go('detail','ramzan')">رمضان نگہبان پیکج</a>
+        <a onclick="go('detail','bisp')">BISP کفالت</a>
+        <a onclick="go('detail','solar')">سولر پینل اسکیم</a>
+        <a onclick="go('detail','sahara')">بیوہ سہارا کارڈ</a>
+        <a onclick="go('detail','labour')">احساس لیبر پروگرام</a>
+        <a onclick="go('detail','asaan_karobar')">آسان کاروبار کارڈ</a>
+        <a onclick="go('detail','sehat')">صحت سہولت کارڈ</a>
+      </div>
+      <div class="fc"><h4>Links</h4>
+        <a onclick="go('upcoming')">Upcoming Schemes</a>
+        <a onclick="go('about')">About Us</a>
+        <a onclick="go('privacy')">Privacy Policy</a>
+        <a onclick="go('contact')">Contact</a>
+      </div>
+      <div class="fc"><h4>Official Sources</h4><p>bisp.gov.pk</p><p>SMS: 8171</p><p>0800-26477</p></div>
+    </div>
+    <div class="fb">© 2026 Pakistan Sarkari Scheme Portal — Informational only | Not a government body</div>
+  </div>
+</footer>
+
+<!-- AD OVERLAY -->
+<div id="ad">
+  <div class="adbg"></div>
+  <div class="tp">
+    <div class="tr">
+      <svg width="48" height="48" viewBox="0 0 48 48"><circle class="tbg" cx="24" cy="24" r="20"/><circle class="ta" id="ta" cx="24" cy="24" r="20"/></svg>
+      <div class="tn" id="tn">30</div>
+    </div>
+    <span class="albl">Ad</span>
+  </div>
+  <button id="adX" onclick="closeAd(true)">✕</button>
+  <div class="ain">
+    <div class="aflag">🇵🇰</div>
+    <h2 class="atitle">Official <em>Registration</em></h2>
+    <p class="asub u">آپ کو ابھی سرکاری رجسٹریشن ویب سائٹ پر لے جایا جائے گا</p>
+    <div class="aps">
+      <div class="ap"><b>مفت</b>Registration</div>
+      <div class="ap"><b>سرکاری</b>Website</div>
+      <div class="ap"><b>محفوظ</b>Secure</div>
+    </div>
+  </div>
+  <div class="ard">
+    <div class="ard-txt" id="ardTxt">Redirecting in 30 seconds...</div>
+    <div class="ard-bar"><div class="ard-fill" id="ardFill"></div></div>
+  </div>
+  <button id="adSkip" onclick="doSkip()">Skip Ad →</button>
+  <div class="apb"><div class="apf" id="apf"></div></div>
+</div>
+
+<script>
+/* ══════════════════════════════════
+   SCHEMES DATABASE
+══════════════════════════════════ */
+const DB = [
+  {
+    id:'eid',ico:'🌙',isNew:true,
+    name:'عید الفطر ریلیف پیکج 2026',
+    tag:'عید سے پہلے 25,000 روپے خصوصی امداد',
+    short:'BISP مستحق خاندانوں کو عید سے پہلے 25,000 روپے — 8171، 9999 یا 8070 سے چیک کریں۔',
+    amt:'25,000 روپے',freq:'عید الفطر 2026',ppl:'90 لاکھ+ خاندان',loc:'تمام اضلاع',
+    elig:'BISP / NSER رجسٹرڈ مستحق خاندان',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://bisp.gov.pk',
+    about:'عید الفطر ریلیف پروگرام 2026 حکومت پاکستان کی جانب سے عید سے قبل غریب خاندانوں کو مالی امداد ہے۔ تین طریقوں سے چیک کریں: BISP کے لیے 8171 پر SMS، وزیراعظم ریلیف کے لیے 9999 پر SMS، اور پنجاب نگہبان کے لیے 8070 پر SMS کریں۔',
+    eligList:['BISP / NSER ڈیٹا بیس میں رجسٹرڈ','CNIC فعال اور NADRA میں اپڈیٹ','کم آمدنی والا گھرانہ','بیوہ، معذور، یومیہ اجرت والے بھی اہل'],
+    docs:['قومی شناختی کارڈ (CNIC) اصل'],
+    steps:[
+      {t:'BISP چیک: 8171',d:'CNIC 8171 پر SMS کریں — BISP اہلیت فوری معلوم ہو گی'},
+      {t:'PM پیکج: 9999',d:'CNIC 9999 پر SMS کریں — وزیراعظم ریلیف اہلیت'},
+      {t:'پنجاب: 8070',d:'CNIC 8070 پر SMS کریں — نگہبان کارڈ پنجاب'},
+      {t:'آن لائن چیک',d:'8171.bisp.gov.pk پر CNIC نمبر درج کریں'},
+      {t:'ادائیگی وصول کریں',d:'اہل ہونے پر عید سے پہلے موبائل اکاؤنٹ میں رقم آئے گی'}
+    ]
+  },
+  {
+    id:'ramzan',ico:'☪️',isNew:false,
+    name:'رمضان نگہبان پیکج 2026',
+    tag:'رمضان المبارک 2026 میں خصوصی راشن امداد',
+    short:'پنجاب حکومت کی طرف سے 10,000 روپے نگہبان کارڈ — PSER رجسٹرڈ خاندانوں کو رمضان امداد۔',
+    amt:'10,000 روپے',freq:'رمضان 2026',ppl:'42 لاکھ+ خاندان',loc:'پنجاب — تمام اضلاع',
+    elig:'PSER رجسٹرڈ کم آمدن خاندان',
+    checkUrl:'https://pser.punjab.gov.pk',
+    applyUrl:'https://pser.punjab.gov.pk',
+    about:'رمضان نگہبان پیکج 2026 پنجاب حکومت کا سب سے بڑا رمضان امدادی پروگرام ہے جس کے لیے 47 ارب روپے مختص کیے گئے ہیں۔ مستحق خاندانوں کو 10,000 روپے نگہبان کارڈ کے ذریعے دیے جاتے ہیں۔ CNIC نمبر 8070 پر SMS کریں یا pser.punjab.gov.pk پر رجسٹریشن کریں۔',
+    eligList:['PSER سروے میں رجسٹرڈ ہوں','پنجاب کے رہائشی ہوں','CNIC فعال ہو','کم آمدنی گھرانہ'],
+    docs:['قومی شناختی کارڈ (CNIC)','BISP یا PSER ادائیگی ریکارڈ'],
+    steps:[
+      {t:'8070 پر SMS کریں',d:'CNIC نمبر 8070 پر بھیجیں — فوری جواب آئے گا'},
+      {t:'یا pser.punjab.gov.pk',d:'آن لائن پورٹل پر CNIC درج کریں'},
+      {t:'تقسیم مرکز جائیں',d:'قریبی نگہبان تقسیم مرکز تلاش کریں'},
+      {t:'CNIC لے کر جائیں',d:'اصل شناختی کارڈ ضروری ہے'},
+      {t:'ادائیگی وصول کریں',d:'تصدیق کے بعد کارڈ یا نقد ملے گا'}
+    ]
+  },
+  {
+    id:'bisp',ico:'💚',isNew:false,
+    name:'BISP – بینظیر انکم سپورٹ پروگرام',
+    tag:'پاکستان کا سب سے بڑا فلاحی پروگرام',
+    short:'غریب خاندانوں کو ہر سہ ماہی 25,000 روپے کی مالی امداد۔ 8171 سے اہلیت چیک کریں۔',
+    amt:'25,000 روپے',freq:'ہر 3 ماہ',ppl:'90 لاکھ+ خاندان',loc:'تمام اضلاع',
+    elig:'ماہانہ آمدنی 50,000 سے کم',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://bisp.gov.pk',
+    about:'بینظیر انکم سپورٹ پروگرام (BISP) پاکستان کا سب سے بڑا سماجی تحفظ کا پروگرام ہے۔ 2008 سے جاری اس پروگرام کے تحت ہر تین ماہ بعد 25,000 روپے مستحق خاندانوں کو دیے جاتے ہیں۔',
+    eligList:['ماہانہ آمدنی 50,000 سے کم','NSER سروے میں شامل','پاکستانی CNIC','سرکاری ملازم نہ ہو'],
+    docs:['قومی شناختی کارڈ (CNIC)','بجلی کا بل','خاندان کی تفصیل'],
+    steps:[
+      {t:'8171 SMS',d:'CNIC نمبر 8171 پر بھیجیں'},
+      {t:'BISP دفتر جائیں',d:'NSER فارم مفت بھریں'},
+      {t:'سروے',d:'اہلکار گھر آ کر جائزہ لے گا'},
+      {t:'ادائیگی',d:'موبائل اکاؤنٹ میں رقم آئے گی'}
+    ]
+  },
+  {
+    id:'kafalat',ico:'👩‍👧',isNew:false,
+    name:'احساس کفالت پروگرام',
+    tag:'غریب خواتین کے لیے مالی امداد',
+    short:'مستحق خواتین کو ہر سہ ماہی 25,000 روپے براہ راست موبائل اکاؤنٹ میں۔',
+    amt:'25,000 روپے',freq:'ہر 3 ماہ',ppl:'80 لاکھ+ خواتین',loc:'تمام اضلاع',
+    elig:'NSER سروے شدہ مستحق خواتین',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://bisp.gov.pk',
+    about:'احساس کفالت پروگرام پاکستان کی غریب خواتین کو مالی طاقت دینے کا سب سے بڑا پروگرام ہے۔ ہر تین ماہ بعد 25,000 روپے خاتون کے موبائل اکاؤنٹ میں آتے ہیں۔',
+    eligList:['خاتون NSER سروے میں مستحق ہو','CNIC رکھتی ہو','ڈبل ادائیگی نہ ہو'],
+    docs:['CNIC','موبائل نمبر (CNIC سے)'],
+    steps:[
+      {t:'8171 چیک',d:'CNIC 8171 پر بھیجیں'},
+      {t:'نادرا تصدیق',d:'CNIC احساس سے لنک کروائیں'},
+      {t:'موبائل اکاؤنٹ',d:'JazzCash/EasyPaisa کھلوائیں'},
+      {t:'ادائیگی',d:'ہر سہ ماہی خودبخود آتی ہے'}
+    ]
+  },
+  {
+    id:'taleemi',ico:'📚',isNew:false,
+    name:'بینظیر تعلیمی وظائف',
+    tag:'بچوں کی تعلیم کے لیے ماہانہ وظیفہ',
+    short:'BISP مستحق بچوں کو اسکول جانے پر 750 تا 3,000 روپے ماہانہ وظیفہ۔',
+    amt:'750–3,000 روپے',freq:'ماہانہ',ppl:'50 لاکھ+ بچے',loc:'تمام اضلاع',
+    elig:'BISP گھرانوں کے 4–16 سال بچے',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://bisp.gov.pk',
+    about:'بینظیر تعلیمی وظائف غریب بچوں کو اسکول بھیجنے کی ترغیب دیتا ہے۔ پرائمری تا میٹرک وظیفہ والدہ کے اکاؤنٹ میں آتا ہے۔',
+    eligList:['والدین BISP میں ہوں','سرکاری اسکول میں داخلہ','عمر 4–16 سال','80% حاضری'],
+    docs:['والدین کا CNIC','بچے کا B-فارم','اسکول داخلہ ثبوت'],
+    steps:[
+      {t:'BISP میں ہوں',d:'والدین پہلے BISP رجسٹرڈ ہوں'},
+      {t:'اسکول داخلہ',d:'سرکاری اسکول میں بچہ داخل کریں'},
+      {t:'BISP کو بتائیں',d:'دفتر میں اطلاع دیں'},
+      {t:'حاضری',d:'80% حاضری ضروری ہے'},
+      {t:'وظیفہ',d:'والدہ کے اکاؤنٹ میں آئے گا'}
+    ]
+  },
+  {
+    id:'sehat',ico:'🏥',isNew:false,
+    name:'صحت سہولت کارڈ',
+    tag:'10 لاکھ تک سالانہ مفت علاج',
+    short:'BISP مستحق خاندانوں کو 10 لاکھ روپے تک مفت علاج — سرکاری و نجی اسپتالوں میں۔',
+    amt:'10 لاکھ روپے',freq:'سالانہ',ppl:'60 لاکھ+ خاندان',loc:'تمام صوبے',
+    elig:'BISP رجسٹرڈ خاندان',
+    checkUrl:'https://www.pmhealthprogram.gov.pk/check-your-eligibility/',
+    applyUrl:'https://www.pmhealthprogram.gov.pk',
+    about:'صحت سہولت کارڈ سے BISP مستحق خاندانوں کو سالانہ 10 لاکھ روپے تک کا مفت علاج ملتا ہے۔ آپریشن، داخلہ، ادویات سب شامل ہیں۔',
+    eligList:['BISP کفالت میں رجسٹرڈ','CNIC فعال'],
+    docs:['CNIC','صحت کارڈ (خودبخود ملتا ہے)'],
+    steps:[
+      {t:'BISP رجسٹریشن',d:'BISP کفالت میں پہلے شامل ہوں'},
+      {t:'کارڈ ملے',d:'اہل ہوں تو کارڈ خودبخود آئے گا'},
+      {t:'اسپتال جائیں',d:'pmhealthprogram.gov.pk پر پینل اسپتال دیکھیں'},
+      {t:'مفت علاج',d:'CNIC دکھائیں — علاج مفت ہے'}
+    ]
+  },
+  {
+    id:'kisaan',ico:'🌾',isNew:false,
+    name:'بینظیر کسان کارڈ',
+    tag:'چھوٹے کسانوں کے لیے زرعی سبسڈی',
+    short:'5 ایکڑ سے کم زمین والے کسانوں کو بیج، کھاد پر 10,000 روپے سبسڈی۔',
+    amt:'10,000 روپے',freq:'فصل کے موسم میں',ppl:'30 لاکھ+ کسان',loc:'تمام صوبے',
+    elig:'5 ایکڑ سے کم زمین والے کسان',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://agripunjab.gov.pk/kissan-card',
+    about:'بینظیر کسان کارڈ سے چھوٹے کسان منظور شدہ دکانوں سے بیج، کھاد سستی قیمت پر خرید سکتے ہیں۔',
+    eligList:['5 ایکڑ یا کم زمین','زرعی محکمے میں رجسٹرڈ','پاکستانی CNIC'],
+    docs:['CNIC','زمین کی فرد یا پٹہ'],
+    steps:[
+      {t:'زرعی دفتر',d:'قریبی زرعی محکمے میں جائیں'},
+      {t:'کاغذات',d:'CNIC اور زمین کے کاغذات دیں'},
+      {t:'کارڈ لیں',d:'تصدیق کے بعد کارڈ جاری ہو گا'},
+      {t:'خریداری',d:'منظور دکانوں سے سبسڈی پر خریدیں'}
+    ]
+  },
+  {
+    id:'nashonuma',ico:'👶',isNew:false,
+    name:'احساس ناشونما پروگرام',
+    tag:'بچوں اور ماؤں کی صحت و غذائیت',
+    short:'5 سال سے کم بچوں اور حاملہ خواتین کو ماہانہ 2,000 روپے اور غذائی امداد۔',
+    amt:'2,000 روپے',freq:'ماہانہ',ppl:'15 لاکھ+ خاندان',loc:'منتخب اضلاع',
+    elig:'BISP مستحق حاملہ خواتین اور 5 سال سے کم بچے',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://bisp.gov.pk',
+    about:'احساس ناشونما پروگرام کا مقصد بچوں کی غذائی قلت کا خاتمہ ہے۔ حاملہ خواتین اور 5 سال سے کم بچوں کو ماہانہ امداد دی جاتی ہے۔',
+    eligList:['BISP مستحق گھرانے','حاملہ خاتون یا 5 سال سے کم بچہ','قریبی BHU میں رجسٹریشن'],
+    docs:['CNIC','بچے کا B-فارم یا پیدائش سرٹیفکیٹ'],
+    steps:[
+      {t:'قریبی BHU جائیں',d:'بنیادی صحت مرکز میں رجسٹریشن کروائیں'},
+      {t:'CNIC تصدیق',d:'BISP اہلیت تصدیق ہو گی'},
+      {t:'ماہانہ وزٹ',d:'باقاعدگی سے چیک اپ ضروری ہے'},
+      {t:'امداد وصول',d:'ماہانہ رقم اکاؤنٹ میں آئے گی'}
+    ]
+  },
+  {
+    id:'labour',ico:'👷',isNew:false,
+    name:'احساس لیبر پروگرام 2026',
+    tag:'یومیہ مزدوروں اور محنت کشوں کے لیے مالی امداد',
+    short:'روزانہ اجرت پر کام کرنے والے مزدوروں کو براہ راست مالی امداد — BISP کے ساتھ مل کر چلایا جا رہا ہے۔',
+    amt:'14,000 روپے',freq:'ہر 3 ماہ',ppl:'50 لاکھ+ مزدور',loc:'تمام اضلاع پاکستان',
+    elig:'یومیہ اجرت مزدور، NSER ڈیٹا بیس میں رجسٹرڈ',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://bisp.gov.pk',
+    about:'احساس لیبر پروگرام 2026 پاکستان کے محنت کش طبقے کو مہنگائی سے بچانے کے لیے شروع کیا گیا ہے۔ یہ پروگرام BISP کے ساتھ مل کر کام کرتا ہے اور یومیہ اجرت والے مزدوروں کو براہ راست نقد امداد دیتا ہے۔ 8171 پر CNIC بھیج کر اہلیت معلوم کریں۔',
+    eligList:['یومیہ اجرت یا معاہدہ مزدور ہوں','NSER یا BISP ڈیٹا بیس میں ہوں','ماہانہ آمدنی 30,000 سے کم ہو','پاکستانی CNIC رکھتے ہوں'],
+    docs:['قومی شناختی کارڈ (CNIC)','کام کا ثبوت یا مزدوری کا خط'],
+    steps:[
+      {t:'8171 پر SMS کریں',d:'CNIC 8171 پر بھیجیں — اہلیت فوری معلوم ہو گی'},
+      {t:'قریبی BISP دفتر جائیں',d:'درخواست فارم بھریں — مفت'},
+      {t:'تصدیق کا انتظار کریں',d:'BISP ٹیم تصدیق کرے گی'},
+      {t:'امداد وصول کریں',d:'موبائل اکاؤنٹ میں رقم آئے گی'}
+    ]
+  },
+  {
+    id:'solar',ico:'☀️',isNew:false,
+    name:'CM پنجاب سولر پینل اسکیم 2026',
+    tag:'غریب خاندانوں کو مفت سولر پینل',
+    short:'پنجاب میں 100 یونٹ سے کم بجلی استعمال کرنے والے خاندانوں کو مفت 2KW سولر پینل — بجلی بل ختم۔',
+    amt:'مفت 2KW سولر سسٹم',freq:'ایک بار',ppl:'10 لاکھ+ خاندان',loc:'پنجاب — تمام اضلاع',
+    elig:'100 یونٹ سے کم ماہانہ بجلی استعمال کرنے والے',
+    checkUrl:'https://cmsolarscheme.punjab.gov.pk/application-result',
+    applyUrl:'https://cmsolarscheme.punjab.gov.pk/application/form',
+    about:'CM پنجاب مریم نواز کی سولر پینل اسکیم کے تحت 100 یونٹ سے کم بجلی استعمال کرنے والے خاندانوں کو مفت 2KW سولر سسٹم دیا جائے گا۔ اس سے بجلی کا بل صفر ہو جائے گا۔ SMS یا آن لائن درخواست دی جا سکتی ہے۔',
+    eligList:['پنجاب کے رہائشی ہوں','ماہانہ 100 یونٹ سے کم بجلی استعمال','اپنا گھر ہو','بجلی کا میٹر اپنے نام ہو'],
+    docs:['CNIC','بجلی کا بل (آخری 3 ماہ)','گھر کی ملکیت کا ثبوت'],
+    steps:[
+      {t:'SMS بھیجیں',d:'اپنا CNIC نمبر مقررہ نمبر پر بھیجیں'},
+      {t:'punjab.gov.pk پر جائیں',d:'آن لائن فارم بھریں'},
+      {t:'دستاویزات جمع کروائیں',d:'CNIC اور بجلی کا بل ساتھ لائیں'},
+      {t:'انسٹالیشن',d:'منظوری کے بعد سولر پینل لگایا جائے گا'}
+    ]
+  },
+  {
+    id:'sahara',ico:'🤲',isNew:false,
+    name:'بیوہ سہارا کارڈ پنجاب 2026',
+    tag:'بیوہ خواتین کے لیے خصوصی مالی امداد',
+    short:'پنجاب میں بیوہ خواتین کو ہر ماہ مالی امداد — اکیلی خواتین کو سہارا دینے کے لیے خصوصی پروگرام۔',
+    amt:'10,500 روپے',freq:'ہر 3 ماہ',ppl:'20 لاکھ+ خواتین',loc:'پنجاب — تمام اضلاع',
+    elig:'بیوہ خواتین جن کے شوہر فوت ہو چکے ہوں',
+    checkUrl:'https://pser.punjab.gov.pk',
+    applyUrl:'https://pser.punjab.gov.pk',
+    about:'بیوہ سہارا کارڈ پنجاب اسکیم 2026 ان خواتین کے لیے ہے جن کے شوہر فوت ہو چکے ہیں اور وہ اکیلے گھر چلا رہی ہیں۔ ہر تین ماہ بعد 10,500 روپے کی امداد ملتی ہے۔ PSER پورٹل یا 8070 پر رجسٹریشن کریں۔',
+    eligList:['بیوہ خاتون ہوں','پنجاب کی رہائشی ہوں','CNIC فعال ہو','PSER ڈیٹا بیس میں رجسٹرڈ ہوں'],
+    docs:['CNIC','شوہر کا وفات سرٹیفکیٹ','نکاح نامہ'],
+    steps:[
+      {t:'8070 پر SMS کریں',d:'CNIC 8070 پر بھیجیں — اہلیت معلوم ہو گی'},
+      {t:'pser.punjab.gov.pk',d:'آن لائن رجسٹریشن کریں'},
+      {t:'دستاویزات',d:'CNIC اور وفات سرٹیفکیٹ جمع کروائیں'},
+      {t:'امداد وصول کریں',d:'منظوری کے بعد ہر سہ ماہی رقم آئے گی'}
+    ]
+  },
+  {
+    id:'asaan_karobar',ico:'🏪',isNew:false,
+    name:'CM پنجاب آسان کاروبار کارڈ 2026',
+    tag:'چھوٹے کاروبار کے لیے 3 لاکھ تک قرضہ',
+    short:'پنجاب میں چھوٹا کاروبار شروع کرنے کے لیے 1 لاکھ سے 3 لاکھ روپے تک آسان قرضہ — 5 سال میں قسطیں۔',
+    amt:'1 لاکھ تا 3 لاکھ روپے',freq:'ایک بار',ppl:'5 لاکھ+ افراد',loc:'پنجاب — تمام اضلاع',
+    elig:'18 سے 45 سال، کاروبار کا منصوبہ رکھنے والے',
+    checkUrl:'https://punjab.gov.pk',
+    applyUrl:'https://punjab.gov.pk',
+    about:'CM پنجاب آسان کاروبار کارڈ 2026 کے تحت پنجاب کے نوجوانوں اور چھوٹے کاروباریوں کو 1 لاکھ سے 3 لاکھ روپے تک آسان قرضہ ملتا ہے۔ 5 سال کی آسان اقساط میں واپسی ہے۔ BISP یا NSER رجسٹرڈ خاندان اہل ہیں۔',
+    eligList:['عمر 18 سے 45 سال','پنجاب کے رہائشی','BISP یا NSER میں رجسٹرڈ','کاروبار کا منصوبہ ہو'],
+    docs:['CNIC','کاروبار کا منصوبہ','بینک اکاؤنٹ نمبر'],
+    steps:[
+      {t:'punjab.gov.pk پر جائیں',d:'آن لائن درخواست فارم بھریں'},
+      {t:'دستاویزات اپلوڈ کریں',d:'CNIC اور کاروبار منصوبہ جمع کروائیں'},
+      {t:'انٹرویو',d:'محکمہ تجارت کا اہلکار جائزہ لے گا'},
+      {t:'قرضہ وصول کریں',d:'منظوری کے بعد اکاؤنٹ میں آئے گا'},
+      {t:'آسان قسطیں',d:'5 سال میں ماہانہ قسطوں میں واپسی'}
+    ]
+  },
+  {
+    id:'parwaz',ico:'✈️',isNew:false,
+    name:'CM پنجاب پرواز کارڈ 2026',
+    tag:'طلباء اور نوجوانوں کے لیے مفت ہوائی سفر',
+    short:'پنجاب کے طلباء اور نوجوانوں کو پاکستان میں مفت domestic ہوائی سفر — CM مریم نواز کا خصوصی پروگرام۔',
+    amt:'مفت ہوائی ٹکٹ',freq:'سالانہ',ppl:'طلباء اور نوجوان',loc:'پنجاب',
+    elig:'پنجاب کے طلباء اور 18 سے 35 سال نوجوان',
+    checkUrl:'https://punjab.gov.pk',
+    applyUrl:'https://punjab.gov.pk',
+    about:'CM پنجاب پرواز کارڈ 2026 پنجاب کے طلباء اور نوجوانوں کو ملک بھر میں مفت ہوائی سفر کی سہولت دیتا ہے۔ CM مریم نواز نے یہ اسکیم نوجوانوں کو بااختیار بنانے کے لیے شروع کی ہے۔',
+    eligList:['پنجاب کے رہائشی طالب علم یا نوجوان','عمر 18 سے 35 سال','CNIC یا B-فارم فعال ہو'],
+    docs:['CNIC یا B-فارم','تعلیمی سرٹیفکیٹ'],
+    steps:[
+      {t:'punjab.gov.pk',d:'آن لائن رجسٹریشن کریں'},
+      {t:'دستاویزات جمع کروائیں',d:'CNIC اور تعلیمی کاغذات اپلوڈ کریں'},
+      {t:'کارڈ وصول کریں',d:'منظوری کے بعد پرواز کارڈ ملے گا'},
+      {t:'سفر کریں',d:'کارڈ سے مفت ہوائی ٹکٹ بک کریں'}
+    ]
+  },
+  {
+    id:'dialysis',ico:'🏥',isNew:false,
+    name:'CM پنجاب ڈائیلیسس کارڈ 2026',
+    tag:'گردے کے مریضوں کے لیے مفت ڈائیلیسس',
+    short:'پنجاب میں گردے کے مریضوں کو مفت ڈائیلیسس — سرکاری اور پینل اسپتالوں میں علاج بالکل مفت۔',
+    amt:'مفت ڈائیلیسس',freq:'ضرورت کے مطابق',ppl:'تمام گردے کے مریض',loc:'پنجاب — تمام اضلاع',
+    elig:'گردے کے مریض جن کو ڈائیلیسس کی ضرورت ہو',
+    checkUrl:'https://punjab.gov.pk',
+    applyUrl:'https://punjab.gov.pk',
+    about:'CM پنجاب ڈائیلیسس کارڈ 2026 پنجاب میں گردے کے مریضوں کو مفت ڈائیلیسس کی سہولت دیتا ہے۔ سرکاری اور پینل نجی اسپتالوں میں یہ سہولت دستیاب ہے۔',
+    eligList:['گردے کی بیماری کا ڈاکٹری سرٹیفکیٹ ہو','پنجاب کے رہائشی ہوں','CNIC فعال ہو'],
+    docs:['CNIC','ڈاکٹر کا سرٹیفکیٹ','گردے کی بیماری کی رپورٹ'],
+    steps:[
+      {t:'ڈاکٹر سے سرٹیفکیٹ لیں',d:'گردے کی بیماری کا ڈاکٹری ثبوت حاصل کریں'},
+      {t:'قریبی اسپتال جائیں',d:'پینل اسپتال میں رجسٹریشن کروائیں'},
+      {t:'CNIC دکھائیں',d:'CNIC اور میڈیکل رپورٹ جمع کروائیں'},
+      {t:'مفت علاج',d:'کارڈ ملنے کے بعد ڈائیلیسس مفت ہو گی'}
+    ]
+  },
+  {
+    id:'ration',ico:'🌾',isNew:false,
+    name:'احساس رمضان راشن پروگرام 2026',
+    tag:'وفاقی حکومت کا مفت آٹا اور راشن',
+    short:'وفاقی حکومت کی جانب سے BISP مستحقین کو رمضان میں مفت آٹا — 9999 سے اہلیت چیک کریں۔',
+    amt:'مفت آٹا اور راشن',freq:'رمضان 2026',ppl:'50 لاکھ+ خاندان',loc:'تمام اضلاع پاکستان',
+    elig:'BISP اور NSER رجسٹرڈ خاندان',
+    checkUrl:'https://pmrrp.nitb.gov.pk',
+    applyUrl:'https://pmrrp.nitb.gov.pk',
+    about:'احساس رمضان راشن پروگرام 2026 وفاقی حکومت کی جانب سے BISP مستحق خاندانوں کو مفت آٹا اور راشن فراہم کرتا ہے۔ 9999 پر CNIC بھیج کر چیک کریں یا pmrrp.nitb.gov.pk پر آن لائن چیک کریں۔',
+    eligList:['BISP یا NSER میں رجسٹرڈ ہوں','CNIC فعال ہو','ماہانہ آمدنی کم ہو'],
+    docs:['قومی شناختی کارڈ (CNIC)'],
+    steps:[
+      {t:'9999 پر SMS کریں',d:'CNIC 9999 پر بھیجیں — فوری جواب آئے گا'},
+      {t:'pmrrp.nitb.gov.pk',d:'آن لائن پورٹل پر CNIC چیک کریں'},
+      {t:'تقسیم مرکز جائیں',d:'قریبی راشن تقسیم مرکز تلاش کریں'},
+      {t:'راشن وصول کریں',d:'CNIC دکھائیں اور راشن لیں'}
+    ]
+  },
+  {
+    id:'nrsp',ico:'💼',isNew:false,
+    name:'احساس قرضہ پروگرام (NRSP)',
+    tag:'کاروبار کے لیے بغیر ضامن قرضہ',
+    short:'غریب خاندانوں کو چھوٹا کاروبار شروع کرنے کے لیے 50,000 تا 5 لاکھ روپے قرضہ۔',
+    amt:'50,000–5 لاکھ',freq:'ایک بار',ppl:'10 لاکھ+ خاندان',loc:'تمام اضلاع',
+    elig:'BISP مستحق اور چھوٹے کاروباری',
+    checkUrl:'https://8171.bisp.gov.pk',
+    applyUrl:'https://nrsp.org.pk',
+    about:'NRSP قرضہ پروگرام کے تحت غریب خاندانوں کو بغیر ضامن اور آسان اقساط پر قرضہ دیا جاتا ہے۔',
+    eligList:['BISP یا NSER میں شامل','عمر 18–55 سال','پہلے سے نادہندہ نہ ہو'],
+    docs:['CNIC','کاروبار کا مختصر منصوبہ','دو تصاویر'],
+    steps:[
+      {t:'NRSP دفتر',d:'قریبی دفتر تلاش کریں'},
+      {t:'درخواست',d:'فارم اور کاروبار منصوبہ جمع کریں'},
+      {t:'انٹرویو',d:'اہلکار جائزہ لے گا'},
+      {t:'قرضہ',d:'منظوری کے بعد اکاؤنٹ میں آئے گا'},
+      {t:'واپسی',d:'آسان ماہانہ اقساط میں'}
+    ]
+  }
+];
+
+const UPCOMING = [
+  {ico:'🏗️',name:'بینظیر گھر پروگرام',desc:'غریب مستحق خاندانوں کو پکا گھر بنانے کے لیے 1.5 لاکھ روپے امداد۔',when:'2026 دوسری سہ ماہی',status:'منصوبہ بندی'},
+  {ico:'👴',name:'بینظیر بزرگ امداد',desc:'60 سال سے زیادہ عمر کے مستحق بزرگوں کو ماہانہ 3,000 روپے امداد۔',when:'2026 آخر تک',status:'منظوری کا انتظار'},
+  {ico:'♿',name:'احساس معذوری وظیفہ',desc:'معذور افراد کے لیے خصوصی ماہانہ امداد اور بحالی پروگرام۔',when:'2026–2027',status:'پائلٹ مرحلہ'},
+  {ico:'🏭',name:'یوتھ اسکلز پروگرام',desc:'15–29 سال نوجوانوں کو فنی تعلیم اور ہنر کی تربیت — مفت اور وظیفے کے ساتھ۔',when:'2026 تیسری سہ ماہی',status:'رجسٹریشن جلد'}
+];
+
+/* ══════════════════════════════════
+   GLOW LOGIC — only newest isNew card
+══════════════════════════════════ */
+function getNewestId(){
+  // first item with isNew:true is the newest
+  const found = DB.find(s => s.isNew);
+  return found ? found.id : null;
+}
+
+/* ══════════════════════════════════
+   RENDER CARD
+══════════════════════════════════ */
+function mkCard(s){
+  const newestId = getNewestId();
+  const isGlow = s.id === newestId;
+  return `<div class="card${isGlow?' glow':''}">
+    <div class="ct">
+      ${s.isNew ? `<span class="new-p">🔥 New</span>` : ''}
+      <div class="ci">${s.ico}</div>
+      <div class="cn u">${s.name}</div>
+    </div>
+    <div class="cb">
+      <p class="cd u">${s.short}</p>
+      <div class="chips">
+        <span class="chip ca">💰 ${s.amt}</span>
+        <span class="chip cp">👥 ${s.ppl}</span>
+        <span class="chip cl">📍 ${s.loc}</span>
+      </div>
+      <div class="btns">
+        <button class="btn bck" onclick="startAd('${s.id}','${s.checkUrl}')">✅ Check</button>
+        <button class="btn bap" onclick="startAd('${s.id}','${s.applyUrl}')">📝 Apply</button>
+        <button class="btn bdt" onclick="go('detail','${s.id}')">🔍 Details</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ══════════════════════════════════
+   RENDER UPCOMING
+══════════════════════════════════ */
+function mkUpcoming(list){
+  return `<div class="up-sec">
+    <h2>🔜 Upcoming Schemes</h2>
+    <p>جلد آنے والی اسکیمیں — ابھی سے تیاری کریں</p>
+    <div class="ug">${list.map(u=>`
+      <div class="uc">
+        <div class="uc-top"><div class="uc-ico">${u.ico}</div><div class="uc-name u">${u.name}</div></div>
+        <p class="uc-desc u">${u.desc}</p>
+        <div class="uc-meta">
+          <span class="uc-tag uc-when">📅 ${u.when}</span>
+          <span class="uc-tag uc-soon">⏳ ${u.status}</span>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+/* ══════════════════════════════════
+   RENDER DETAIL
+══════════════════════════════════ */
+function mkDetail(id){
+  const s=DB.find(x=>x.id===id); if(!s) return;
+  document.getElementById('dw').innerHTML=`
+    <div class="back-btn" onclick="go('schemes')">← Back</div>
+    <div class="dh" data-ico="${s.ico}">
+      <p style="font-size:2rem;margin-bottom:7px">${s.ico}</p>
+      <h1>${s.name}</h1>
+      <p class="u">${s.tag}</p>
+    </div>
+    <div class="dg">
+      <div class="dm">
+        <div class="box"><div class="bh">📄 اسکیم کے بارے میں</div><p class="u" style="font-size:.81rem;color:var(--gray500);line-height:2.2">${s.about}</p></div>
+        <div class="box"><div class="bh">✅ اہلیت کی شرائط</div><div style="display:flex;flex-direction:column;gap:6px">${s.eligList.map(e=>`<div class="cli">${e}</div>`).join('')}</div></div>
+        <div class="box"><div class="bh">📝 رجسٹریشن کا طریقہ</div><div style="display:flex;flex-direction:column;gap:9px">${s.steps.map((st,i)=>`<div class="si"><div class="sn2">${i+1}</div><p class="u"><b>${st.t}</b><br>${st.d}</p></div>`).join('')}</div></div>
+        <div class="box"><div class="bh">📂 ضروری دستاویزات</div><div style="display:flex;flex-direction:column;gap:6px">${s.docs.map(d=>`<div class="cli">${d}</div>`).join('')}</div></div>
+      </div>
+      <div class="ds">
+        <div class="abox"><span class="an">${s.amt}</span><div class="al u">${s.freq}</div></div>
+        <div class="box">
+          <div class="bh">📊 مختصر معلومات</div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div class="ir"><span class="ir-i">👥</span><div class="ir-t u"><b>فائدہ اٹھانے والے</b>${s.ppl}</div></div>
+            <div class="ir"><span class="ir-i">📍</span><div class="ir-t u"><b>اضلاع</b>${s.loc}</div></div>
+            <div class="ir"><span class="ir-i">✅</span><div class="ir-t u"><b>اہلیت</b>${s.elig}</div></div>
+          </div>
+        </div>
+        <button class="bigg bigg-l" onclick="startAd('${s.id}','${s.checkUrl}')">✅ Check Eligibility</button>
+        <button class="bigg bigg-g" onclick="startAd('${s.id}','${s.applyUrl}')">📝 Apply / Register Now</button>
+        <p style="font-size:.67rem;color:var(--gray500);text-align:center;margin-top:-4px">سرکاری ویب سائٹ پر لے جایا جائے گا</p>
+        <div class="box" style="background:var(--gl);border-color:var(--gl2);text-align:center">
+          <p style="font-size:.74rem;font-weight:600;color:var(--g);margin-bottom:5px">⚡ Check via SMS</p>
+          <p style="font-size:2.3rem;font-weight:800;color:var(--g);line-height:1">8171</p>
+          <p class="u" style="font-size:.7rem;color:var(--gray500);margin-top:4px">CNIC نمبر SMS کریں — مفت</p>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ══════════════════════════════════
+   ROUTING
+══════════════════════════════════ */
+function go(page,id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('[data-p]').forEach(a=>a.classList.remove('on'));
+  const lk=document.querySelector(`[data-p="${page}"]`); if(lk) lk.classList.add('on');
+  if(page==='detail'&&id){mkDetail(id);document.getElementById('page-detail').classList.add('active');}
+  else{const el=document.getElementById('page-'+page);if(el)el.classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ══════════════════════════════════
+   RENDER ALL
+══════════════════════════════════ */
+function renderAll(){
+  const html=DB.map(mkCard).join('');
+  document.getElementById('hg').innerHTML=html;
+  document.getElementById('ag').innerHTML=html;
+  const upHtml=mkUpcoming(UPCOMING);
+  document.getElementById('upHome').innerHTML=upHtml;
+  document.getElementById('upFull').innerHTML=upHtml;
+}
+
+/* ══════════════════════════════════
+   HIDDEN AI BOT — auto finds new govt
+   schemes, adds them silently to top
+   No trace anywhere in UI
+══════════════════════════════════ */
+async function _bot(){
+  const _e=DB.map(x=>x.id).join(',');
+  try{
+    const _r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        tools:[{type:'web_search_20250305',name:'web_search'}],
+        system:`Today is March 18, 2026. You are searching for NEW Pakistani government welfare schemes announced in 2026. SKIP these existing IDs: ${_e}.
+Return ONLY a valid JSON array or empty []. No markdown, no extra text, no explanation.
+Each item schema: {id:"snake_case_unique",ico:"single emoji",isNew:true,name:"Urdu name",tag:"Urdu tagline",short:"Urdu 1-2 sentences",amt:"Urdu amount",freq:"Urdu",ppl:"Urdu",loc:"Urdu",elig:"Urdu",checkUrl:"real official .gov.pk URL for checking eligibility",applyUrl:"real official .gov.pk URL for applying",about:"Urdu 3 sentences",eligList:["Urdu"],docs:["Urdu"],steps:[{t:"Urdu",d:"Urdu"}]}
+Max 2 items. Only REAL announced schemes with real working URLs. Absolutely no fake schemes.`,
+        messages:[{role:'user',content:'Search for new Pakistan government welfare scheme 2026 BISP Ehsaas announced latest'}]
+      })
+    });
+    if(!_r.ok)return;
+    const _d=await _r.json();
+    const _t=(_d.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+    const _si=_t.indexOf('['),_ei=_t.lastIndexOf(']');
+    if(_si<0||_ei<0)return;
+    const _ns=JSON.parse(_t.slice(_si,_ei+1));
+    if(!Array.isArray(_ns)||!_ns.length)return;
+    let _added=0;
+    _ns.forEach(_s=>{
+      if(!DB.find(x=>x.id===_s.id)){
+        // Mark old newest as not new (glow shifts)
+        DB.forEach(x=>{if(x.isNew)x.isNew=false;});
+        _s.isNew=true;
+        DB.unshift(_s);
+        _added++;
+        // Update ticker silently
+        const _tr=document.getElementById('tt');
+        ['🆕 '+_s.name,'🆕 '+_s.name].forEach(_tx=>{
+          const _el=document.createElement('s');
+          _el.textContent=_tx;
+          _tr.prepend(_el);
+        });
+      }
+    });
+    if(_added>0)renderAll();
+  }catch(_){}
+  // Re-run every 30 minutes
+  setTimeout(_bot,30*60*1000);
+}
+
+/* ══════════════════════════════════
+   AD — 30s then AUTO REDIRECT
+══════════════════════════════════ */
+let _it=null,_url='#';
+const _C=2*Math.PI*20;
+
+function startAd(id,url){
+  _url=url||'#';
+  clearInterval(_it);
+  const ov=document.getElementById('ad');
+  const n=document.getElementById('tn');
+  const a=document.getElementById('ta');
+  const pf=document.getElementById('apf');
+  const sk=document.getElementById('adSkip');
+  const x=document.getElementById('adX');
+  const ard=document.getElementById('ardTxt');
+  const af=document.getElementById('ardFill');
+  let s=30;
+  n.textContent=30;a.style.strokeDashoffset=0;pf.style.width='0%';af.style.width='0%';
+  sk.style.display='none';x.style.display='none';
+  ard.textContent='Redirecting in 30 seconds...';
+  ov.style.display='flex';document.body.style.overflow='hidden';
+  _it=setInterval(()=>{
+    s--;const v=Math.max(0,s);n.textContent=v;
+    const p=(30-v)/30;
+    a.style.strokeDashoffset=_C*(1-p);
+    pf.style.width=(p*100)+'%';// no auto fill
+    ard.textContent=v>0?`Redirecting in ${v} seconds...`:'Opening...';
+    if(v<=0){clearInterval(_it);sk.style.display='block';}
+  },1000);
+}
+
+function doSkip(){
+  const sk=document.getElementById('adSkip');
+  const x=document.getElementById('adX');
+  const ard=document.getElementById('ardTxt');
+  sk.style.display='none';
+  let c=5;
+  ard.textContent=c+' سیکنڈ بعد بند کر سکتے ہیں...';
+  const _ct=setInterval(()=>{
+    c--;
+    if(c>0){
+      ard.textContent=c+' سیکنڈ بعد بند کر سکتے ہیں...';
+    } else {
+      clearInterval(_ct);
+      x.style.display='flex';
+      ard.textContent='';
+    }
+  },1000);
+}
+
+function closeAd(redirect){
+  clearInterval(_it);
+  document.getElementById('ad').style.display='none';
+  document.body.style.overflow='';
+  if(redirect&&_url&&_url!=='#')window.open(_url,'_blank');
+}
+
+/* MOBILE NAV */
+function od(){document.getElementById('drw').classList.add('open');}
+function cd(e){if(!e||e.target===document.getElementById('drw'))document.getElementById('drw').classList.remove('open');}
+
+/* INIT */
+renderAll();
+document.getElementById('sbTxt').textContent=`✅ ${DB.length} active government schemes loaded`;
+// Start hidden bot silently on load
+window.addEventListener('load',()=>{ setTimeout(_bot, 3000); });
+</script>
+</body>
+</html>
