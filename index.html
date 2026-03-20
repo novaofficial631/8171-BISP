@@ -969,14 +969,7 @@ const _C=2*Math.PI*20;
 function startAd(id,url){
   _url=url||'#';
   clearInterval(_it);
-  // PopUnder — Adsterra ad fires here on button click
-  try{
-    var _pu=window.open('about:blank','_blank');
-    _pu.document.write('<script src="https://pl28941454.profitablecpmratenetwork.com/2d/ab/ef/2dabef59e176c005d78beb95019f9301.js"><\/script>');
-    _pu.document.close();
-    setTimeout(()=>{try{if(_pu&&!_pu.closed)_pu.focus();}catch(e){}},100);
-    window.focus();
-  }catch(e){}
+
   const ov=document.getElementById('ad');
   const n=document.getElementById('tn');
   const a=document.getElementById('ta');
@@ -1004,17 +997,20 @@ function doSkip(){
   const sk=document.getElementById('adSkip');
   const x=document.getElementById('adX');
   const ard=document.getElementById('ardTxt');
+  const si=document.getElementById('skipInfo');
   sk.style.display='none';
+  si.style.display='block';
   let c=5;
-  ard.textContent=c+' سیکنڈ بعد بند کر سکتے ہیں...';
+  si.textContent=c+' سیکنڈ بعد بند کر سکتے ہیں...';
+  ard.textContent='';
   const _ct=setInterval(()=>{
     c--;
     if(c>0){
-      ard.textContent=c+' سیکنڈ بعد بند کر سکتے ہیں...';
+      si.textContent=c+' سیکنڈ بعد بند کر سکتے ہیں...';
     } else {
       clearInterval(_ct);
+      si.style.display='none';
       x.style.display='flex';
-      ard.textContent='';
     }
   },1000);
 }
